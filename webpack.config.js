@@ -74,9 +74,7 @@ module.exports = {
             {
                 test: /\.m?js$/,
                 exclude: /node_modules/,
-                use: {
-                    use: jsLoaders()
-                }
+                use: jsLoaders()
             }
         ],
     },
