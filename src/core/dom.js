@@ -1,9 +1,45 @@
 class Dom {
+    constructor(selector) {
+        this.$element = typeof selector === 'string'
+            ? document.querySelector(selector)
+            : selector;
+    }
 
+    html(html) {
+        if (typeof html === 'string') {
+            this.$element.innerHTML = html;
+            return this;
+        }
+
+        return this.$element.outerHTML.trim();
+    }
+
+    clear() {
+        this.html('');
+        return this;
+    }
+
+    on() {
+
+    }
+
+    append(node) {
+        if (node instanceof Dom) {
+            node = node.$element;
+        }
+
+        if (Element.prototype.append) {
+            this.$element.append(node);
+        } else {
+            this.$element.appendChild(node);
+        }
+        // for chaning ability
+        return this;
+    }
 }
 
-export function $() {
-    return new Dom();
+export function $(selector) {
+    return new Dom(selector);
 }
 
 $.create = (tagName, classes = '') => {
@@ -13,5 +49,5 @@ $.create = (tagName, classes = '') => {
         element.classList.add(classes);
     }
 
-    return element;
+    return $(element);
 };
