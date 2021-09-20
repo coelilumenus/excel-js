@@ -19,6 +19,7 @@ export class DOMListener {
                     `Method ${method} is not implemented in ${name} component`
                 );
             }
+
             // bind utside 'on' because
             // we need use it with its own context at remove-function too
             this[method] = this[method].bind(this);
