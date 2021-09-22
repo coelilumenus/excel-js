@@ -4,7 +4,7 @@ export class Header extends ExcelComponent {
     static className = 'excel__header';
 
     getTemplate() {
-        return `
+      return `
             <input type="text" class="input" value="Новая таблица">
             <div>
                 <div class="button">

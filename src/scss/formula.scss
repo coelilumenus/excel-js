@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'mixins';
+@import "variables";
+@import "mixins";
 
 .excel__formula {
     position: absolute;
@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid $border-color;
-    
+
     & .info {
         padding: 2px 0 0 0;
         font-size: 18px;
@@ -20,7 +20,7 @@
         min-width: $info-cell-width;
         min-height: $formula-height;
     }
-    
+
     & .input {
         padding: 4px;
         font-size: 12px;
@@ -29,5 +29,4 @@
         height: 100%;
         color: #000;
     }
-    
 }

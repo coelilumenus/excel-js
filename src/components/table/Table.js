@@ -1,10 +1,21 @@
 import {ExcelComponent} from '@core/ExcelComponent';
 import {createTable} from './table.template';
+import {resize} from './table.resize';
 
 export class Table extends ExcelComponent {
-    static className = 'excel__table';
+  static className = 'excel__table';
 
-    getTemplate() {
-        return createTable();
-    }
+  constructor($root) {
+    super($root, {
+      listeners: ['mousedown']
+    });
+  }
+
+  getTemplate() {
+    return createTable(35);
+  }
+
+  onMousedown(e) {
+    resize(e, this.$root);
+  }
 }
