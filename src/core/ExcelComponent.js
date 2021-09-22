@@ -1,20 +1,20 @@
 import {DOMListener} from '@core/DOMListener';
 
 export class ExcelComponent extends DOMListener {
-    constructor($root, options = {}) {
-        super($root, options.listeners);
-    }
+  constructor($root, options = {}) {
+    super($root, options.listeners);
+  }
 
-    // Return compontent's template
-    getTemplate() {
-        return '';
-    }
+  // Return compontent's template
+  getTemplate() {
+    return '';
+  }
 
-    init() {
-        this.initDOMListeners();
-    }
+  init() {
+    this.initDOMListeners();
+  }
 
-    remove() {
-        this.removeDOMListeners();
-    }
+  remove() {
+    this.removeDOMListeners();
+  }
 }

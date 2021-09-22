@@ -4,7 +4,7 @@ export class Toolbar extends ExcelComponent {
     static className = 'excel__toolbar';
 
     getTemplate() {
-        return `
+      return `
             <div class="button">
                 <i class="material-icons">format_align_left</i>
             </div>

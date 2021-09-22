@@ -1,11 +1,11 @@
-@import '~normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import "~normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
-@import 'header';
-@import 'toolbar';
-@import 'formula';
-@import 'table';
-@import 'dashboard';
+@import "header";
+@import "toolbar";
+@import "formula";
+@import "table";
+@import "dashboard";
 
 * {
     margin: 0;
@@ -14,7 +14,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 12px;
 }
 
@@ -23,6 +23,5 @@ body {
     color: #888;
     height: 100%;
     max-width: 100%;
-    font-size: .8rem;
+    font-size: 0.8rem;
 }
-
