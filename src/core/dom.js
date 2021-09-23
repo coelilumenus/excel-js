@@ -63,7 +63,7 @@ class Dom {
   }
 
   find(selector) {
-    return this.$element.querySelector(selector);
+    return $(this.$element.querySelector(selector));
   }
 
   css(styles = {}) {
@@ -72,6 +72,14 @@ class Dom {
       .forEach((key) => {
         this.$element.style[key] = styles[key];
       });
+  }
+
+  addClass(className) {
+    this.$element.classList.add(className);
+  }
+
+  removeClass(className) {
+    this.$element.classList.remove(className);
   }
 }
 
