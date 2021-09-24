@@ -1,11 +1,9 @@
-import {arrayMatrix} from './table.functions';
+import {arrayMatrix, outline} from './table.functions';
+import {classNames, cases} from './table.properties';
 
 export class TableSelection {
-  static className = 'selected';
-
   constructor() {
     this.group = [];
-    this.groupOutline = [];
     this.current = null;
   }
 
@@ -14,32 +12,28 @@ export class TableSelection {
 
     this.group.push($element);
     this.current = $element;
-    $element.addClass(TableSelection.className);
+    $element.addClass(classNames.single);
   }
 
   clear() {
-    this.group.forEach(($cell) => $cell.removeClass(TableSelection.className));
+    this.group.forEach(($cell) => {
+      $cell.removeClass(classNames.single);
+
+      if ($cell.data.outline) {
+        $cell.removeClass($cell.data.outline);
+        $cell.removeAttribute(outline.data);
+      }
+    });
+
     this.group = [];
   }
 
   selectGroup($group = []) {
     this.clear();
-
     this.group = $group;
-    this.groupOutline = [];
 
-    this.group.forEach(($element) => {
-      $element.addClass(TableSelection.className);
-      this.groupOutline.push($element.id());
-    });
-
-    console.log(this.initGroupOutline());
-  }
-
-  initGroupOutline() {
-    const matrix = arrayMatrix(this.groupOutline);
-    console.log(matrix);
-    // const corners = []
+    const matrix = arrayMatrix(this.group);
+    outline.init(this.group, classNames, cases(matrix));
   }
 }
 

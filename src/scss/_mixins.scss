@@ -27,3 +27,8 @@
     margin: 0;
     padding: 0;
 }
+
+@mixin outline($horizontal, $vertical, $stretch: 1px) {
+    box-shadow: $horizontal $vertical 0px $stretch rgba(60, 116, 255, 1);
+    z-index: 950;
+}

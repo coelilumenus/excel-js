@@ -82,6 +82,14 @@ class Dom {
     this.$element.classList.remove(className);
   }
 
+  setAttribute(name, value) {
+    this.$element.setAttribute(name, value);
+  }
+
+  removeAttribute(name) {
+    this.$element.removeAttribute(name);
+  }
+
   id(parse) {
     if (parse) {
       const parsed = this.id().split(':');
