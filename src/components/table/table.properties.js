@@ -23,7 +23,6 @@ const classNames = {
 const cases = (matrix) => {
   return ({
     corners: {
-      type: 'string',
       leftTop: matrix.corners.leftTop,
       rightTop: matrix.corners.rightTop,
       leftBot: matrix.corners.leftBot,
@@ -34,7 +33,6 @@ const cases = (matrix) => {
       singleLeft: matrix.corners.singleLeft
     },
     edges: {
-      type: 'array',
       top: matrix.edges.top,
       bot: matrix.edges.bot,
       left: matrix.edges.left,

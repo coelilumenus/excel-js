@@ -25,6 +25,7 @@ export class Formula extends ExcelComponent {
 
     onKeydown(e) {
       if (e.key === 'Enter') {
+        e.preventDefault();
         this.$emit('formula:enter');
       }
     }

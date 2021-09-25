@@ -144,14 +144,14 @@ const outline = {
           Object
             .keys(cases[key])
             .forEach((deepKey) => {
-              if (cases[key]['type'] === 'string') {
+              if (typeof cases[key][deepKey] === 'string') {
                 switch ($element.id()) {
                 case cases[key][deepKey]:
                   $element.addClass(classes[key][deepKey]);
                   $element.setAttribute(outline.data, classes[key][deepKey]);
                   break;
                 }
-              } else if (cases[key]['type'] === 'array') {
+              } else if (typeof cases[key][deepKey] === 'object') {
                 const array = Array.from(cases[key][deepKey]);
                 switch ($element.id()) {
                 case array.find((item) => item === $element.id()):
@@ -159,11 +159,6 @@ const outline = {
                   $element.setAttribute(outline.data, classes[key][deepKey]);
                   break;
                 }
-              } else {
-                throw new Error(
-                  // eslint-disable-next-line max-len
-                  'The object should has property "type" with value "string" or "array"'
-                );
               }
             });
         });
