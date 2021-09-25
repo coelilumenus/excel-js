@@ -90,6 +90,11 @@ class Dom {
     this.$element.removeAttribute(name);
   }
 
+  focus() {
+    this.$element.focus();
+    return this;
+  }
+
   id(parse) {
     if (parse) {
       const parsed = this.id().split(':');

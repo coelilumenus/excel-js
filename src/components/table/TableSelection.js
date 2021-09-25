@@ -1,4 +1,4 @@
-import {arrayMatrix, outline} from './table.functions';
+import {outlineMatrix, outline} from './table.functions';
 import {classNames, cases} from './table.properties';
 
 export class TableSelection {
@@ -12,7 +12,7 @@ export class TableSelection {
 
     this.group.push($element);
     this.current = $element;
-    $element.addClass(classNames.single);
+    $element.focus().addClass(classNames.single);
   }
 
   clear() {
@@ -32,7 +32,7 @@ export class TableSelection {
     this.clear();
     this.group = $group;
 
-    const matrix = arrayMatrix(this.group);
+    const matrix = outlineMatrix(this.group);
     outline.init(this.group, classNames, cases(matrix));
   }
 }

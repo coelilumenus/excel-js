@@ -45,4 +45,13 @@ const cases = (matrix) => {
   });
 };
 
-export {classNames, cases};
+const keys = [
+  'Enter',
+  'Tab',
+  'ArrowLeft',
+  'ArrowRight',
+  'ArrowDown',
+  'ArrowUp'
+];
+
+export {classNames, cases, keys};
