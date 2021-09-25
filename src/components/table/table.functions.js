@@ -43,7 +43,6 @@ export function nextSelector(key, {col, row}) {
   return `[data-id="${row}:${col}"]`;
 }
 
-
 export function outlineMatrix($group) {
   const array = $group.map(($element) => $element.id());
 
