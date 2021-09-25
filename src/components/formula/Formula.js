@@ -3,10 +3,11 @@ import {ExcelComponent} from '@core/ExcelComponent';
 export class Formula extends ExcelComponent {
     static className = 'excel__formula';
 
-    constructor($root) {
+    constructor($root, options) {
       super($root, {
         name: 'Formula',
-        listeners: ['input']
+        listeners: ['input', 'keydown'],
+        ...options
       });
     }
 
@@ -17,7 +18,14 @@ export class Formula extends ExcelComponent {
         `;
     }
 
-    onInput(event) {
-      console.log('Formula: onInput', event);
+    onInput(e) {
+      const text = e.target.textContent.trim();
+      this.$emit('formula:input', text);
+    }
+
+    onKeydown(e) {
+      if (e.key === 'Enter') {
+        this.$emit('formula:enter');
+      }
     }
 }
